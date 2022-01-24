@@ -5,6 +5,7 @@ App implements basic CRUD operations for inventory management
 ## Installation/setup
 Install the dependencies and devDependencies and start the server.
 ```sh
+cd angular-shop-bridge
 npm i
 npm start (or) ng serve
 ```
@@ -16,6 +17,7 @@ ng test
 ## Installation/setup
 Install the dependencies and devDependencies and start the server.
 ```sh
+cd nodejs-shop-bridge
 npm i
 npm start
 ```
