@@ -51,5 +51,5 @@ Unit testing not impelmented.
 - [Color Hunt] - Color to satisfy you minds
 **Free Software, Go Crazy!**
 
-   [flaticon]: <https://www.flaticon.com/>
-   [colorpalette]: <https://colorhunt.co//>
+   [https://www.flaticon.com/]: <https://www.flaticon.com/>
+   [https://colorhunt.co/]: <https://colorhunt.co//>
