@@ -9,6 +9,12 @@ cd angular-shop-bridge
 npm i
 npm start (or) ng serve
 ```
+Verify the deployment by navigating to your server address in
+your preferred browser.
+
+```sh
+http://localhost:4200/
+```
 Unit testing
 ```sh
 ng test
@@ -21,6 +27,12 @@ cd nodejs-shop-bridge
 npm i
 npm start
 ```
+Verify the deployment by navigating to your server address in
+your preferred browser.
+
+```sh
+http://localhost:9000/
+```
 Unit testing not impelmented.
 
 
@@ -32,3 +44,12 @@ Unit testing not impelmented.
 | API development & Node.js setup | 2 |
 | API Integration | 1.5 |
 | Unit testing | 4 |
+
+
+## _special thanks to following site for color palette and image_
+- [Flat Icon] - Wide range of images, icon and svgs
+- [Color Hunt] - Color to satisfy you minds
+**Free Software, Go Crazy!**
+
+   [flaticon]: <https://www.flaticon.com/>
+   [colorpalette]: <https://colorhunt.co//>
