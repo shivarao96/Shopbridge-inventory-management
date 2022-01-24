@@ -1,0 +1,13 @@
+<section class="search-bar-section">
+    <input type="text" placeholder="Search here !" class="search-bar" id="search-bar"
+        [(ngModel)]="queriedString" (keyup.enter)="search()" (keyup)="emitSuggestionVal($event)" />
+        <img *ngIf="queriedString && queriedString.length" class="clear-search cursor--pointer" src="assets/images/close.png" alt="clear search value"
+            (click)="clearSearchField()" id="search-bar-close-icon" />
+    <img src="assets/images/search.png" (click)="search();$event.stopPropagation()" class="search-icon"
+        alt="search" id="search-icon">
+    <div class="suggestion-popup" *ngIf="openSuggestionUI && suggestions && suggestions.length" (outsideClick)="openSuggestionUI = false" appOutsideClick>
+        <div class="suggestion-element" *ngFor="let suggestion of suggestions" (click)="suggestionClicked(suggestion)"> 
+            {{suggestion.value}}
+        </div>
+    </div>
+</section>

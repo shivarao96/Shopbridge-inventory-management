@@ -1,0 +1,19 @@
+<section class="admin-section">
+    
+    <div></div>
+    <div class="admin-form-section">
+        <div class="logo">ShopBridge</div>
+        <div class="landing-btn-wrapper d-flex" *ngIf="showLandingButton">
+            <div class="btn login-btn m-r-40" (click)="navTologin()">Login</div>
+            <div class="btn register-btn" (click)="navToRegister()">Register</div>            
+        </div>
+        <div class="form-section" *ngIf="!showLandingButton">
+            <div class="button-wrapper d-flex">
+                <div class="btn login-btn admin-btn" [ngClass]="{'btn-selected' : currentSection === 'login'}" (click)="navTologin()">Login</div>
+                <div class="btn register-btn admin-btn" [ngClass]="{'btn-selected' : currentSection === 'register'}" (click)="navToRegister()">Register</div>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+</section>

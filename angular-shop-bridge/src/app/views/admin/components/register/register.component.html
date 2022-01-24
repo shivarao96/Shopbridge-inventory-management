@@ -1,0 +1,61 @@
+<section class="registraion-section">
+    <form class="form" #registrationForm="ngForm" (ngSubmit)="onRegistrationBtnClick(registrationForm)" novalidate id="registration-form">
+        <!--username-->
+        <div class="form-group input-container">
+            <label id="registration-username-label">Username</label>
+            <input type="text" class="form-control" [(ngModel)]="registrationModel.username" name="username"
+            #username="ngModel" required id="registration-username-input">
+            <span class="bar"></span>
+            <div class="invalid" *ngIf="registrationForm.submitted && username.errors?.['required']" id="registration-username-err-msg">
+                Username is required.
+            </div>
+        </div>
+        <!--email-->
+        <div class="form-group input-container register-email-field">
+            <label id="register-email-label">email</label>
+            <input type="text" id="register-email-input" class="form-control" [(ngModel)]="registrationModel.email" name="email" #email="ngModel"
+             required appCheckEmail>
+             <span class="bar"></span>
+             <div id="register-email-err-required" class="invalid" *ngIf="registrationForm.submitted && email.errors?.['required']">
+                Email is required.
+            </div>
+            <div id="register-email-err-invalid" class="invalid" *ngIf="registrationForm.submitted && !email.errors?.['required'] && email.errors?.['validateEmail']">
+                Invalid email format
+            </div>
+        </div>
+        <!--password-->
+        <div class="form-group input-container">
+            <label id="registration-password-label">Password</label>    
+            <input type="password" class="form-control" [(ngModel)]="registrationModel.password" name="password"
+                #password="ngModel" required id="registration-password-input" appCheckPassword />
+            <span class="bar"></span>
+            <div id="register-passsword-err-required" class="invalid" *ngIf="registrationForm.submitted && password.errors?.['required']">
+                Password is required.
+            </div>
+            <div id="register-passsword-err-invalid" class="invalid" *ngIf="registrationForm.submitted && !password.errors?.['required'] && password.errors?.['validatePassword']">
+                Invalid password format.
+            </div>
+        </div>
+        <!--confirmPassword-->
+        <div class="form-group input-container">
+            <label id="register-confirmpassword-label">Confirm password</label>
+            <input type="password" id="register-confirmpassword-input" class="form-control" [(ngModel)]="registrationModel.confirmPassword"
+            name="confirmPassword" #confirmPassword="ngModel" required>
+              <span class="bar"></span>
+              <div class="invalid" id="register-confirmpassword-err-required"
+                *ngIf="registrationForm.submitted && confirmPassword.errors?.['required']">
+                Confirm password is required.
+            </div>
+            <div class="invalid" id="register-confirmpassword-err-invalid" *ngIf="registrationForm.submitted && !confirmPassword.errors?.['required'] && registrationModel.password != registrationModel.confirmPassword">
+                Confirm password is not matching.
+            </div>
+        </div>
+        <!--registration-->
+        <div class="btn-container">
+            <button class="btn-custom btn-registration" id="registration-btn">
+                Register
+            </button>
+        </div>
+
+    </form>
+</section>

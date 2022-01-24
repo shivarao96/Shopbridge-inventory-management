@@ -1,0 +1,8 @@
+<section class="view-guider-section">
+    <div *ngFor="let item of mappingObj">
+        <div class="guilder d-flex" (click)="emitKeyOnClick(item.key)" [ngClass]="{'active-item': currentKey === item.key}">
+            <img src="{{item.img}}" alt="item image"/>
+            <div>{{item.value}}</div>
+        </div>
+    </div>
+</section>

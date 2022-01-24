@@ -1,0 +1,6 @@
+<div class="form-group custom-radio-btn checkbox-container checkbox-wrapper" id="radio-btn-wrapper">
+    <input type="checkbox" id="customRadioBtn--{{radioBtnId}}" class="form-field-control" [(ngModel)]="customRadioBtnStatus"
+        (ngModelChange)="customRadioBtnStatusChange.emit(customRadioBtnStatus)">
+    <label for="customRadioBtn--{{radioBtnId}}" class="radio-btn-label" id="checked-{{customRadioBtnStatus}}"></label>
+    <div class="checkbox-description" id="radio-btn-description">{{customRadioBtnLabel}}</div>
+</div>

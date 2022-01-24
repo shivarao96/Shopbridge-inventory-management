@@ -1,0 +1,55 @@
+.search-bar-section {
+    position: relative;
+    &::after {
+        content: "";
+        width: 2px;
+        height: 30px;
+        background-color: grey;
+        position: absolute;
+        right: 50px;
+        top: 10px;
+    }
+    .search-bar {
+        width: 100%;
+        padding-right: 80px;
+    }
+    .clear-search{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 65px;
+        top: 15px;
+        cursor: pointer;
+    }
+    .search-icon {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
+    img {
+        position: absolute;
+    }
+    .suggestion-popup {
+        background-color: #F7F7F7;
+        box-shadow: 0 0 6px 0px;
+        max-height: 300px;
+        overflow: auto;
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+        top: 50px;
+        left: 0;
+    }
+    .suggestion-element {
+        width: 100%;
+        padding: 15px 10px;
+        box-sizing: border-box;
+        &:hover {
+            cursor: pointer;
+            background-color: #ea5c2b4d;
+        }
+    }
+}

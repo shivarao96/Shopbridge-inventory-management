@@ -1,0 +1,8 @@
+<div class="form-group checkbox-container checkbox-wrapper">
+    <input type="checkbox" id="customCheckbox--{{checkBoxId}}" class="form-field-control custom-checkbox" [(ngModel)]="checkBoxStatus"
+        (ngModelChange)="checkBoxStatusChange.emit(checkBoxStatus)">
+    <label for="customCheckbox--{{checkBoxId}}" id="checkbox-label" >
+        <img *ngIf="checkBoxStatus" class="item-checked" src="assets/images/tick.png" alt="Selected" id="checkbox-tik-img"/>
+    </label>
+    <div class="checkbox-description" id="checkbox-description">{{ checkBoxLabel}}</div>
+</div>

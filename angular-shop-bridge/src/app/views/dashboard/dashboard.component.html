@@ -1,0 +1,26 @@
+<app-header></app-header>
+<section class="dashboard-section d-flex">
+    <div class="view-guilder">
+        <app-view-guider [mappingObj]="guiderObj" [currentKey]="currentKey" (selectedKey)="navBasedOnGuider($event)"></app-view-guider>
+    </div>
+    <div class="content-wrapper">
+        <div class="d-flex info-wrapper" *ngIf="showInfoViewer">
+            <div class="card-container" *ngFor="let item of guiderObj">
+                <div class="card" (click)="navBasedOnGuider(item.key)">
+                    <div class="info-image">
+                        <img class="image" src="{{item.img}}" alt="common background"/>
+                    </div>
+                    <div class="info-header">
+                        <h2>{{item.value}}</h2>
+                        <div class="info">
+                            {{item.description}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="entity-wrapper">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,58 @@
+.dashboard-section {
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    .view-guilder {
+        width: 30%;
+        overflow: auto;
+    }
+    .content-wrapper {
+        width: 70%;
+        overflow: auto;
+    }
+    .card {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        max-height: 300px;
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    }
+    .info-image {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .info-wrapper {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .card-container {
+        margin-top: 60px;
+        width: 50%;
+    }
+    .info {
+        padding: 10px;
+        height: 78%;
+        background: #dedbdb;
+        box-sizing: border-box;
+        overflow: hidden;
+        display: -webkit-box;
+        max-width: 200px;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .info-header {
+        h2 {
+            text-align: center;
+        }
+        width: 45%;
+    }
+    .entity-wrapper {
+        position: relative;
+    }
+}

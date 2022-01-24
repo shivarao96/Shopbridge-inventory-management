@@ -1,0 +1,31 @@
+<section class="login-section">
+    <form class="form" #loginForm="ngForm" (ngSubmit)="onLoginBtnClick(loginForm)" novalidate id="login-form">
+        <!--username-->
+        <div class="form-group input-container">
+            <label id="login-username-label">Username</label>
+            <input type="text" class="form-control" [(ngModel)]="loginModel.username" name="username"
+            #username="ngModel" required id="login-username-input">
+            <span class="bar"></span>
+            <div class="invalid" *ngIf="loginForm.submitted && username.errors?.['required']" id="login-username-err-msg">
+                Username is required.
+            </div>
+        </div>
+        <!--password-->
+        <div class="form-group input-container">
+            <label id="login-password-label">Password</label>    
+            <input type="password" class="form-control" [(ngModel)]="loginModel.password" name="password"
+                #password="ngModel" required id="login-password-input"/>
+            <span class="bar"></span>
+            <div class="invalid" *ngIf="loginForm.submitted && password.errors?.['required']" id="login-password-err-msg">
+                Password is required.
+            </div>
+        </div>
+        <!--login-->
+        <div class="btn-container">
+            <button class="btn-custom btn-login" id="login-btn">
+                Login
+            </button>
+        </div>
+
+    </form>
+</section>

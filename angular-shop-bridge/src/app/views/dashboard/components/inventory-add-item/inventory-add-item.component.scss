@@ -1,0 +1,68 @@
+.add-item-section {
+    max-height: 80vh;
+    overflow: auto;
+    .heading {
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .btn-processed {
+        margin-right: 60px;
+    }
+    .btn-wrapper {
+        margin-top: 20px;
+    }
+
+    form {
+        margin-top: 30px;
+
+        input, select {
+            width: inherit;
+        }
+    }
+
+    .file-upload-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        position: relative;
+
+        .placeholder {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            z-index: 1;
+            border-radius: 50%;
+            background-color: grey;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        input {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            z-index: 4;
+            opacity: 0;
+        }
+    }
+
+    fieldset {
+        border: none;
+    }
+
+    .disable-upload {
+        pointer-events: none;
+    }
+
+    .img-upload {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,32 @@
+<section class="filter-section">
+    <img class="filter-img" src="assets/images/filter.png" alt="filter ui" (click)="openFilter = true"/>
+    <div class="filter-popup-ui" *ngIf="openFilter" (outsideClick)="openFilter = false" appOutsideClick >
+        <div class="popup-dropdown fiter-popup" id="fiter-popup">
+            <div class="filter-props">
+                <div class="sort-by" id="sort-by-wrapper">
+                    <div class="filter-label main-header-small" id="sort-by-label">Sort By</div>
+                    <div class="radio-btn-props" *ngFor="let item of customFilterConfig?.sortConfig | keyvalue;let i = index;trackBy:trackByMethod;" id="{{item.key}}">
+                        <app-custom-radiobtn id="sort-by-radio-btn-{{i}}" [customRadioBtnLabel]="item.value.label" [customRadioBtnStatus]="item.value.value" (customRadioBtnStatusChange)="setSortSelection(item.key, $event)" [radioBtnId]="item.key"></app-custom-radiobtn>
+                        <div *ngIf="item.value.value" class="sort-type" id="sorting-action-type">
+                            <div class="ascending-sort" id="ascending-sort-{{i}}" *ngIf="item.value.sortType === 'ascending' || item.value.sortType === ''" (click)="item.value.sortType = 'descending'">
+                                <img class="sort-img" id="ascending-sort-img-{{i}}" src="assets/images/sort-ascending.png" alt="sort ascending" />
+                            </div>
+                            <div class="descending-sort" id="descending-sort-{{i}}" *ngIf="item.value.sortType === 'descending'" (click)="item.value.sortType = 'ascending'">
+                                <img class="sort-img" id="descending-sort-img-{{i}}" src="assets/images/sort-descending.png" alt="sort descending" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-by" id="filter-by-wrapper">
+                    <div class="filter-label main-header-small" id="filter-by-label">Filter By</div>
+                    <div class="checkbox-props" *ngFor="let item of customFilterConfig?.filterConfig | keyvalue;let i = index;trackBy:trackByMethod;" id="{{item.key}}">
+                        <app-custom-checkbox id="filter-by-radio-btn-{{i}}" [checkBoxLabel]="item.value.label" [(checkBoxStatus)]="item.value.value" [checkBoxId]="item.key"></app-custom-checkbox>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-custom" (click)="applyFilters();"id="apply-filter">
+                Apply
+            </button>
+        </div>
+    </div>
+</section>

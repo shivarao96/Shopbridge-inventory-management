@@ -1,0 +1,20 @@
+.pagination-section {
+    align-items: center;
+    .arrow-img {
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+    }
+    .right-arrow {
+        transform: rotate(180deg);
+    }
+
+    .page-item{
+        padding: 10px;
+        margin-right: 20px;
+    }
+    .active {
+        background-color: #ea5c2b;
+        color: white;
+    }
+}

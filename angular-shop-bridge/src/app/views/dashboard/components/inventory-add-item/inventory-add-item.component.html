@@ -1,0 +1,87 @@
+<section class="add-item-section">
+    <div class="heading" *ngIf="implementationInfo !== 'detail'">
+        {{implementationInfo === 'add' ? 'Add Item' : 'Edit Item'}}
+    </div>
+    <div class="file-upload-wrapper">
+        <div class="placeholder">
+            <div *ngIf="!uploadedImage">{{implementationInfo === 'detail' ? 'No Image found' : 'upload image'}}</div>
+            <img *ngIf="uploadedImage" src="{{uploadedImage}}">
+        </div>
+        <input class="img-upload" [ngClass]="{'disable-upload' : implementationInfo === 'detail'}" type="file" #imageUpload (change)="fileUpload($event)" size="1"
+            accept='image/*'>
+    </div>
+    <form class="add-item-form form" #itemForm="ngForm" (ngSubmit)="onActionButtonClick(itemForm)" novalidate
+        id="item-form" >
+        <fieldset [disabled]="implementationInfo === 'detail'">
+
+            <!--name-->
+            <div class="form-group input-container">
+                <label>Name</label>
+                <input type="text" class="form-control" [(ngModel)]="itemModel.name" name="name" #name="ngModel" required>
+                <div class="invalid" *ngIf="itemForm.submitted && name.errors?.['required']">
+                    Name is required.
+                </div>
+            </div>
+            <!-- Description field starts -->
+            <div class="form-group input-container">
+                <label>Description</label>
+                <textarea class="form-field-control" maxlength="250" [(ngModel)]="itemModel.description" name="description"
+                    #description="ngModel"></textarea>
+                <span *ngIf="implementationInfo !== 'detail'" class="character-count">{{250 - itemModel.description.length}} character</span>
+            </div>
+            <!--Price-->
+            <div class="form-group input-container">
+                <label>Price</label>
+                <input type="number" class="form-control" [(ngModel)]="itemModel.price" name="price" #price="ngModel"
+                    required>
+                <div class="invalid" *ngIf="itemForm.submitted && price.errors?.['required']">
+                    Price is required.
+                </div>
+            </div>
+            <!--Item Status-->
+            <div class="form-group input-container">
+                <label>Item Status</label>
+                <select name="itemStatusRef" #itemStatusRef="ngModel" [(ngModel)]="itemModel.itemStatus" required>
+                    <option value="" disabled>Choose item status</option>
+                    <option *ngFor="let status of itemStatus" [value]="status.name">
+                        {{ status.name }}
+                    </option>
+                </select>
+                <div class="invalid" *ngIf="itemForm.submitted && itemStatusRef.errors?.['required']">
+                    Status is required.
+                </div>
+            </div>
+            <!--Warehouse Location-->
+            <div class="form-group input-container">
+                <label>Warehouse Location</label>
+                <select name="warehouseLocationRef" [(ngModel)]="itemModel.warehouseLocation" required
+                    #warehouseLocationRef="ngModel">
+                    <option value="" disabled>Choose warehouse location</option>
+                    <div *ngFor="let warehouse of warehouseLocation">
+                        {{ warehouse.name }}
+                    </div>
+                    <option *ngFor="let warehouse of warehouseLocation" [value]="warehouse.name">
+                        {{ warehouse.name }}
+                    </option>
+                </select>
+                <div class="invalid" *ngIf="itemForm.submitted && warehouseLocationRef.errors?.['required']">
+                    Warehouse location is required.
+                </div>
+            </div>
+            <!--Total items in stock-->
+            <div class="form-group input-container">
+                <label>Total items in stock</label>
+                <input type="number" class="form-control" [(ngModel)]="itemModel.totalItemStock" name="totalItemStock"
+                    #totalItemStock="ngModel" required>
+                <div class="invalid" *ngIf="itemForm.submitted && totalItemStock.errors?.['required']">
+                    Total number of item required
+                </div>
+            </div>
+        </fieldset>
+        <div class="btn-wrapper d-flex" *ngIf="implementationInfo !== 'detail'">
+            <button class="btn-custom btn-processed">
+                {{implementationInfo === 'add' ? 'Add' : 'Edit'}}
+            </button>
+        </div>
+    </form>
+</section>

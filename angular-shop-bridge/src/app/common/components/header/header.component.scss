@@ -1,0 +1,23 @@
+.header-section{
+    padding: 10px 30px;
+    z-index: 1;
+    background: #ea5c2b;
+    box-shadow: 0 1px 6px 0px;
+    position: relative;
+    box-sizing: border-box;
+    height: 100px;
+    .logo {
+        font-size: 48px;
+        font-style: italic;
+        cursor: pointer;
+        display: inline;
+    }
+    justify-content: space-between;
+    align-items: center;
+
+    .logout-img{ 
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+}

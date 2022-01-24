@@ -1,0 +1,44 @@
+.filter-section {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    .filter-img {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .filter-popup-ui {
+        position: absolute;
+        width: 350px;
+        padding: 20px;
+        background-color: #F0ECE3;
+        top: 35px;
+        z-index: 2;
+        box-shadow: 0 0 5px 0px;
+    }
+    
+    .filter-label {
+        margin-bottom: 15px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .filter-props {
+        margin-bottom: 30px;
+    }
+    
+    .radio-btn-props {
+        display: flex;
+    }
+    
+    .sort-type {
+        img {
+            cursor: pointer;
+            margin-left: 15px;
+        }
+    }
+    .sort-img {
+        width: 30px;
+        height: 30px;
+    }
+}

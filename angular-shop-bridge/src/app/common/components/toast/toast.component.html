@@ -1,0 +1,13 @@
+<section class="toast-wrapper" id="toast-wrapper" [ngClass]="{'show-toast' : toastData.visibility}">
+	<div class="message" [ngClass]="toastData.status" id="toast-status-{{toastData.status}}">
+		<div class="message-block">
+			<div class="img-block">
+				<img src="{{toastData.img}}" alt="{{toastData.status}}" id="toast-img-{{toastData.status}}" />
+			</div>
+			<div class="msg" id="toast-message">{{ toastData.data }}</div>
+		</div>
+		<div class="close-img" (click)="close()" id="close-action">
+			<img src="assets/images/close.png" alt="close" id="close-img" />
+		</div>
+	</div>
+</section>

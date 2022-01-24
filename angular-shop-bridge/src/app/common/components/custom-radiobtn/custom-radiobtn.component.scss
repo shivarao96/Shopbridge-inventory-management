@@ -1,0 +1,38 @@
+.radio-btn-label {
+    width: 18px;
+    height: 18px;
+    &:before {
+        border-radius: 50%;
+        background-color: #ffffff !important;
+        padding: 8px !important;
+    }
+    &:after {
+        width: 10px !important;
+        height: 10px !important;
+        border: none !important;
+        border-radius: 50% !important;
+        border-color: #ffffff !important;
+        background-color: #ea5c2b;
+        top: 6px !important;
+        left: 5px !important;
+    }
+}
+
+.custom-radio-btn {
+    input[type=checkbox]:checked + label:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 4px;
+        left: 8px;
+        width: 25px;
+        height: 25px;
+        border-width: 0 2px 2px 0;
+        border-radius: 25px;
+    }
+}
+
+.checkbox-wrapper {
+    flex-direction: row;
+    align-items: center;
+}

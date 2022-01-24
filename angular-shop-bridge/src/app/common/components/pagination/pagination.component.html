@@ -1,0 +1,6 @@
+<section class="pagination-section d-flex">
+    <img class="arrow-img cursor-pointer" src="assets/images/left-arrow.png" alt="right arrow" (click)="onClickPage(pageNumber - 1)"/>
+    <div class="page-item cursor-pointer" [ngClass]="{'active': pageNumber === item}" *ngFor="let item of pages"
+        (click)="onClickPage(item)">{{item}}</div>
+    <img class="arrow-img right-arrow cursor-pointer" src="assets/images/left-arrow.png" alt="right arrow" (click)="onClickPage(pageNumber + 1)"/>
+</section>
