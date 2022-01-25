@@ -49,7 +49,7 @@ Unit testing not impelmented.
 ## _special thanks to following site for color palette and image_
 - [Flat Icon] - Wide range of images, icon and svgs
 - [Color Hunt] - Color to satisfy you minds
-**Free Software, Go Crazy!**
 
    [https://www.flaticon.com/]: <https://www.flaticon.com/>
    [https://colorhunt.co/]: <https://colorhunt.co//>
+
